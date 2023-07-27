@@ -2,7 +2,7 @@ import express, { Express, Request, Response } from "express";
 import http from "http";
 import dataRouter from "./src/controllers/Controller";
 import cors from "cors";
-require("./src/config/dbConnect");
+require("./src/config/db");
 import { Server, Socket } from "socket.io";
 import Data from "./src/models/Data";
 const app: Express = express();
