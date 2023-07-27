@@ -1,0 +1,18 @@
+for run the backend-Nodejs
+command-
+npm install
+
+npx ts-node server.ts 
+
+
+Mongodb database-
+
+{
+  "_id": {
+    "$oid": "64c2c2c76cd9e36916670210"
+  },
+  "value": 40,
+  "timestamp": {
+    "$date": "2023-07-27T19:17:27.384Z"
+  }
+}

@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Chart from "chart.js/auto";
 import { io } from "socket.io-client";
-import "./lineChart.css";
+import "./PieChart.css";
 import zoomPlugin from "chartjs-plugin-zoom";
 
-const LineChart = () => {
+const PieChart = () => {
   const chartRef = useRef();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -120,35 +120,38 @@ const LineChart = () => {
   }
 
   return (
-    <div className="container">
-      <canvas ref={chartRef} style={{ width: "100%", height: "100px" }} />;
-      <div className="btns">
-        <button onClick={handleResetZoom} className="resetButton">
-          Reset Zoom
-        </button>
-        <div className="swCntr">
-          <label className="swLbl">
-            <input
-              type="radio"
-              value="line"
-              checked={chartType === "line"}
-              onChange={() => setChartType("line")}
-            />
-            Line Chart
-          </label>
-          <label className="swlbl">
-            <input
-              type="radio"
-              value="bar"
-              checked={chartType === "bar"}
-              onChange={() => setChartType("bar")}
-            />
-            Bar Chart
-          </label>
+    <div className="text-center">
+      <h3>Date vs Temperature</h3>
+      <div className="container">
+        <canvas ref={chartRef} style={{ width: "100%", height: "100px" }} />;
+        <div className="btns">
+          <button onClick={handleResetZoom} className="resetButton">
+            Reset Zoom
+          </button>
+          <div className="swCntr">
+            <label className="swLbl">
+              <input
+                type="radio"
+                value="line"
+                checked={chartType === "line"}
+                onChange={() => setChartType("line")}
+              />
+              Line-Chart
+            </label>
+            <label className="swlbl">
+              <input
+                type="radio"
+                value="bar"
+                checked={chartType === "bar"}
+                onChange={() => setChartType("bar")}
+              />
+              Bar-Chart
+            </label>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default LineChart;
+export default PieChart;

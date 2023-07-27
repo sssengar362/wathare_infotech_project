@@ -1,0 +1,5 @@
+for run the frontend-React.js
+command-
+npm install
+ 
+npm start
